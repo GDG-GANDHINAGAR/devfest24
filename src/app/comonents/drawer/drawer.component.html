@@ -1,0 +1,19 @@
+<div class="drawer-wrap">
+  <div class="brand">
+    <img src="./assets/images/logo.svg" alt="">
+  </div>
+  <div class="actions">
+
+      <ul class="links">
+        @for (link of LINKS; track link) {
+
+          <li [routerLink]="['#']">
+            {{ link.title }}
+          </li>
+        }
+      </ul>
+      <button retro-button class="ticket-button" [color]="AppColors.WHITE">
+        Get Tickets
+      </button>
+  </div>
+</div>

@@ -7,6 +7,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {ToolbarComponent} from "../../comonents/toolbar/toolbar.component";
 import {AppService} from "../../services/app.service";
+import {DrawerComponent} from "../../comonents/drawer/drawer.component";
+import {RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-root-page',
@@ -21,6 +23,8 @@ import {AppService} from "../../services/app.service";
     MatIconModule,
     AsyncPipe,
     ToolbarComponent,
+    DrawerComponent,
+    RouterOutlet,
   ]
 })
 export class RootPageComponent {

@@ -8,6 +8,6 @@
 @mixin sidenavTheme() {
   --mat-sidenav-content-background-color: #{$color-background};
   @include gridYellow();
-  border-right: $retro-border;
+  border-right: $retro-border-thick;
   border-radius: 0 !important;
 }

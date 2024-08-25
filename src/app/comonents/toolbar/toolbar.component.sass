@@ -1,6 +1,7 @@
 .inner-wrap
   width: 100%
   height: 100px
+  margin: 0 auto
   padding: 0 10px
   display: grid
   max-width: 1200px
@@ -8,15 +9,44 @@
   align-items: center
   justify-items: start
   grid-auto-flow: column
-  grid-template-columns: repeat(3, 0.33fr)
+  box-sizing: border-box
+  grid-template-columns: 1fr 1fr
+  position: relative
   grid-template-rows: repeat(1, 100px)
 
+  .menu
+    max-width: 50px
+    position: absolute
+    left: 10px
+
+  .actions
+    display: flex
+    justify-content: end
+    width: 100%
+    align-items: center
+    max-height: 100px
+    ul
+
+      list-style: none
+      cursor: pointer
+      font-size: 1.5rem
+      display: flex
+      gap: 30px
+      padding-right: 30px
+      line-height: 0100px
+      padding-left: 0
 
   .brand
     height: 100%
+
     &.center
       justify-self: center
+
     img
       height: 80px
       padding: 10px
       object-fit: contain
+  &.isMobile
+    grid-template-columns: 1fr
+    justify-content: center
+    align-items: center

@@ -9,6 +9,7 @@
   //noinspection CssInvalidPropertyValue
   box-shadow: getShadow(5px);
   transition: all ease 0.2s;
+  height: 60px;
   padding: 10px 20px;
   font-size: 1.5rem;
   &:hover {

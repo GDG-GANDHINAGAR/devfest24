@@ -1,9 +1,10 @@
-<div class="inner-wrap">
+<div class="inner-wrap" [ngClass]="{isMobile: (isHandset$|async)}">
   @if (isHandset$ | async) {
     <button
       type="button"
       aria-label="Toggle sidenav"
       retro-button
+      class="menu"
       [icon]="true"
       (click)="toggleDrawer()">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
@@ -15,9 +16,15 @@
   <div class="actions">
     @if (!(isHandset$|async)) {
       <ul class="links">
+        @for (link of LINKS; track link) {
+
+          <li [routerLink]="['#']">
+            {{ link.title }}
+          </li>
+        }
       </ul>
       <button retro-button>
-        test
+        Get Tickets
       </button>
     }
   </div>

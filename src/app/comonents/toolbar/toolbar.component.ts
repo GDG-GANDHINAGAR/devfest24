@@ -8,6 +8,8 @@ import {map, shareReplay} from "rxjs/operators";
 import {MatSidenav} from "@angular/material/sidenav";
 import {AppService} from "../../services/app.service";
 import {RetroButtonDirective} from "../../directives/retro-button.directive";
+import {LINKS} from "../../constants/links";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-toolbar',
@@ -18,7 +20,8 @@ import {RetroButtonDirective} from "../../directives/retro-button.directive";
     MatIcon,
     MatIconButton,
     RetroButtonDirective,
-    NgClass
+    NgClass,
+    RouterLink
   ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.sass'
@@ -26,7 +29,7 @@ import {RetroButtonDirective} from "../../directives/retro-button.directive";
 export class ToolbarComponent {
   private breakpointObserver = inject(BreakpointObserver);
   private app = inject(AppService);
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small,])
     .pipe(
       map(result => result.matches),
       shareReplay()
@@ -43,4 +46,6 @@ export class ToolbarComponent {
   toggleDrawer() {
     this.app.toggleDrawer()
   }
+
+  protected readonly LINKS = LINKS;
 }
