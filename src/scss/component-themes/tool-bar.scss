@@ -1,6 +1,8 @@
-@use '@angular/material' as mat;
-@use '../custom-theme' as theme;
+@import 'variables';
 
-mat-toolbar {
-  background: mat.get-theme-color(theme.$df-23-theme, surface-container);
+@mixin toolbarTheme() {
+  --mat-toolbar-container-background-color: #{$retro-white};
+  --mat-toolbar-standard-height: 100px;
+  transition: border 0.02s ease-in-out;
+  border-bottom: solid 4px #{$color-on-surface};
 }

@@ -1,0 +1,14 @@
+@import "variables";
+
+@mixin gridYellow {
+  background-image: linear-gradient($retro-yellow-light 2px, transparent 2px), linear-gradient(to right, $retro-yellow-light 2px, transparent 2px);
+  background-size: 32px 32px;
+  background-color: $retro-yellow !important;
+}
+
+@mixin checkYellow {
+  background-image: repeating-conic-gradient($retro-yellow 0% 25%, $retro-yellow-light 0% 50%);
+  background-position: 0 0, 32px 32px;
+  background-size: 64px 64px;
+  background-color: #47d3ff;
+}

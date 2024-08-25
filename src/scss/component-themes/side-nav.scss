@@ -1,0 +1,13 @@
+@import 'variables';
+@import '../mixins/patterns';
+@import '../utils';
+
+@mixin sidenavContainerTheme() {
+  --mat-sidenav-content-background-color: #{$color-background};
+}
+@mixin sidenavTheme() {
+  --mat-sidenav-content-background-color: #{$color-background};
+  @include gridYellow();
+  border-right: $retro-border;
+  border-radius: 0 !important;
+}

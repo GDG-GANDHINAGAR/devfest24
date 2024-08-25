@@ -1,0 +1,24 @@
+<div class="inner-wrap">
+  @if (isHandset$ | async) {
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      retro-button
+      [icon]="true"
+      (click)="toggleDrawer()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+  }
+  <div class="brand" [ngClass]="{center: (isHandset$|async)}">
+    <img src="./assets/images/logo.svg" alt="">
+  </div>
+  <div class="actions">
+    @if (!(isHandset$|async)) {
+      <ul class="links">
+      </ul>
+      <button retro-button>
+        test
+      </button>
+    }
+  </div>
+</div>

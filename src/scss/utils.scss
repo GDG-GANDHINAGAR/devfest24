@@ -1,0 +1,7 @@
+@function getShadow($widths...) {
+  $shadow: '',;
+  @each $number in $widths {
+    $shadow: #{$shadow}, #{$number} #{$number} #000;
+  }
+  @return $shadow;
+}

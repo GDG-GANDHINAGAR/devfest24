@@ -1,0 +1,70 @@
+@use '@angular/material' as mat;
+@import "theme";
+@import "patterns";
+
+@include mat.core();
+
+$df-23-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+    use-system-variables: true,
+  ),
+  typography: (
+    use-system-variables: true,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+:root {
+  @include mat.all-component-themes($df-23-theme);
+  @include mat.system-level-colors($df-23-theme); // 👈 Added
+  @include mat.system-level-typography($df-23-theme); // 👈 Added
+}
+
+
+@font-face {
+  font-family: 'GSB';
+  src: url(../public/fonts/GoogleSansDisplayBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'GSR';
+  //noinspection CssUnknownTarget
+  src: url(../public/fonts/GoogleSansDisplay-Regular.ttf) format('truetype');
+}
+
+html, body {
+  height: 100%;
+  background: mat.get-theme-color($df-23-theme, background);
+
+  * {
+    font-family: 'GSR', sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-sidenav-container {
+  @include sidenavContainerTheme();
+  @include gridYellow()
+}
+
+
+mat-sidenav{
+  @include sidenavTheme();
+}
+
+mat-toolbar {
+  @include toolbarTheme()
+}
+
+button.retro-button {
+  @include retroButtonTheme()
+}

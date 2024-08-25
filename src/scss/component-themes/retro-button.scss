@@ -1,0 +1,48 @@
+@import "../utils";
+@mixin retroButtonTheme {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  cursor: pointer;
+  //noinspection CssInvalidPropertyValue
+  box-shadow: getShadow(5px);
+  transition: all ease 0.2s;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  &:hover {
+    transform: translate(3px, 3px);
+    box-shadow: getShadow(2px);
+  }
+
+  &.icon {
+    height: 46px;
+    width: 46px;
+    max-height: 46px;
+    max-width: 46px;
+    overflow: hidden;
+    padding: 0;
+
+  }
+  // bg colors
+  &.pink {
+    background: var(--sys-retro-pink);
+  }
+  &.yellow {
+    background: var(--sys-retro-yellow);
+  }
+  &.red {
+    background: var(--sys-retro-red);
+  }
+  &.green {
+    background: var(--sys-retro-green);
+  }
+  &.blue {
+    background: var(--sys-retro-blue);
+  }
+  &.white {
+    background: var(--sys-retro-white);
+  }
+}
+
