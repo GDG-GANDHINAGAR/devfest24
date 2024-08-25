@@ -1,0 +1,6 @@
+@use '@angular/material' as mat;
+@use '../custom-theme' as theme;
+
+mat-toolbar {
+  background: mat.get-theme-color(theme.$df-23-theme, surface-container);
+}
