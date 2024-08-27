@@ -7,8 +7,8 @@
 }
 
 @mixin checkYellow {
-  background-image: repeating-conic-gradient($retro-yellow 0% 25%, $retro-yellow-light 0% 50%);
-  background-position: 0 0, 32px 32px;
-  background-size: 64px 64px;
+  background-image: repeating-conic-gradient($retro-yellow-offset 0% 25%, $retro-yellow-light-offset 0% 50%);
+  background-position: 0 0, 16px 16px;
+  background-size: 32px 32px;
   background-color: #47d3ff;
 }

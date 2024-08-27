@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, HostListener, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {MatToolbar} from "@angular/material/toolbar";
 import {RootPageComponent} from "./pages/root-page/root-page.component";
+import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,30 @@ import {RootPageComponent} from "./pages/root-page/root-page.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  innerWidth;
+  innerHeight;
+  isBrowser;
 
+  @HostListener('window:resize', ['$event'])
+  resize() {
+    this.setVars()
+  }
+
+  constructor(@Inject(PLATFORM_ID) platformId) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
+
+  ngOnInit() {
+    this.setVars()
+  }
+
+  setVars() {
+    if (this.isBrowser) {
+      this.innerWidth = window.innerWidth;
+      this.innerHeight = window.innerHeight;
+      document.documentElement.style.setProperty('--vh', `${this.innerHeight}px`);
+      document.documentElement.style.setProperty('--vw', `${this.innerWidth}px`);
+    }
+  }
 }

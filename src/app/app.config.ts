@@ -10,13 +10,24 @@ import {getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingServi
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({eventCoalescing: true}), provideRouter(routes), provideClientHydration(), provideAnimationsAsync(), provideFirebaseApp(() => initializeApp({
-    "projectId": "gdg-gnr",
-    "appId": "1:865471101877:web:a309f20a7c8547c684f7fc",
-    "storageBucket": "gdg-gnr.appspot.com",
-    "apiKey": "AIzaSyC8DWAignVPtgY4Fw3X_pNDzu40o9mmCcM",
-    "authDomain": "gdg-gnr.firebaseapp.com",
-    "messagingSenderId": "865471101877",
-    "measurementId": "G-1YB0B0MY23"
-  })), provideAuth(() => getAuth()), provideAnalytics(() => getAnalytics()), ScreenTrackingService, UserTrackingService, provideFirestore(() => getFirestore()), provideAnimationsAsync()]
+  providers: [
+    provideZoneChangeDetection({eventCoalescing: true}),
+    provideRouter(routes,),
+    provideClientHydration(),
+    provideAnimationsAsync(),
+    provideFirebaseApp(() => initializeApp({
+      "projectId": "gdg-gnr",
+      "appId": "1:865471101877:web:a309f20a7c8547c684f7fc",
+      "storageBucket": "gdg-gnr.appspot.com",
+      "apiKey": "AIzaSyC8DWAignVPtgY4Fw3X_pNDzu40o9mmCcM",
+      "authDomain": "gdg-gnr.firebaseapp.com",
+      "messagingSenderId": "865471101877",
+      "measurementId": "G-1YB0B0MY23"
+    })), provideAuth(() => getAuth()),
+    provideAnalytics(() => getAnalytics()),
+    ScreenTrackingService,
+    UserTrackingService,
+    provideFirestore(() => getFirestore()),
+    provideAnimationsAsync(),
+  ]
 };

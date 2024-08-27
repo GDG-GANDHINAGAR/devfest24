@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+import {Component, HostListener, Inject, inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {AppService} from "../../../services/app.service";
+import {AsyncPipe, isPlatformBrowser, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [
+    AsyncPipe,
+    NgStyle
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.sass'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  private app = inject(AppService)
+  isLandscape$ = this.app.isLandscape$;
 
+
+
+  ngOnInit(): void {
+  }
 }

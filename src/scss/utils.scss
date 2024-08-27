@@ -5,3 +5,6 @@
   }
   @return $shadow;
 }
+@function getMarginWithShadow($margin, $shadowWidth) {
+  @return #{$margin}px #{$margin+$shadowWidth}px #{$margin+$shadowWidth}px #{$margin}px;
+}
