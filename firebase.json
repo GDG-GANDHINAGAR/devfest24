@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "df-23/dist/df-23",
     "ignore": [
       "firebase.json",
       "**/.*",
