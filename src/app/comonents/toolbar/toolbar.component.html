@@ -1,33 +1,33 @@
 <div class="inner-wrap" [ngClass]="{isMobile: (isPortable$|async)}">
-<!--  @if (isPortable$ | async) {-->
-<!--    <button-->
-<!--      type="button"-->
-<!--      aria-label="Toggle sidenav"-->
-<!--      retro-button-->
-<!--      class="menu"-->
-<!--      [icon]="true"-->
-<!--      (click)="toggleDrawer()">-->
-<!--      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
-<!--    </button>-->
-<!--  }-->
+  @if (isPortable$ | async) {
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      retro-button
+      class="menu"
+      [icon]="true"
+      (click)="toggleDrawer()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+  }
   <div class="brand" [ngClass]="{center: (isPortable$|async)}">
     <img src="./assets/images/logo.svg" alt="">
   </div>
   <div class="actions">
-<!--    @if (!(isPortable$|async)) {-->
-    <!--      <div class="links" retro-highlight [highlighter]="highlighter">-->
-    <!--        <ul>-->
-    <!--          @for (link of LINKS; track link) {-->
-    <!--            <li [ngClass]="{'active':(route.fragment|async)==link.link}" (click)="navigateTo(link.link)">-->
-    <!--              {{ link.title }}-->
-    <!--            </li>-->
-    <!--          }-->
-    <!--        </ul>-->
-    <!--        <div class="highlighter" #highlighter></div>-->
-    <!--      </div>-->
-    <!--      <button retro-button>-->
-    <!--        Get Tickets-->
-    <!--      </button>-->
-    <!--    }-->
+    @if (!(isPortable$|async)) {
+      <div class="links" retro-highlight [highlighter]="highlighter">
+        <ul>
+          @for (link of LINKS; track link) {
+            <li [ngClass]="{'active':(route.fragment|async)==link.link}" (click)="navigateTo(link.link)">
+              {{ link.title }}
+            </li>
+          }
+        </ul>
+        <div class="highlighter" #highlighter></div>
+      </div>
+      <button retro-button>
+        Get Tickets
+      </button>
+    }
   </div>
 </div>

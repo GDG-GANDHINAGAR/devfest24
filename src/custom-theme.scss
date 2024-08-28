@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 @import "theme";
+@import "utils";
 @import "patterns";
 
 @include mat.core();
@@ -37,6 +38,12 @@ $df-23-theme: mat.define-theme((
   src: url(../public/fonts/GoogleSansDisplay-Regular.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'GSBO';
+  //noinspection CssUnknownTarget
+  src: url(../public/fonts/Pso.woff) format('truetype');
+}
+
 html, body {
   height: 100%;
   background: mat.get-theme-color($df-23-theme, background);
@@ -53,11 +60,12 @@ body {
 
 mat-sidenav-container {
   @include sidenavContainerTheme();
-  @include gridYellow()
+  @include gridYellow();
+  @include scrollbar($retro-white, #000, 4px)
 }
 
 
-mat-sidenav{
+mat-sidenav {
   @include sidenavTheme();
 }
 

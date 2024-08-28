@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       this.innerWidth = window.innerWidth;
       this.innerHeight = window.innerHeight;
       document.documentElement.style.setProperty('--vh', `${this.innerHeight}px`);
-      document.documentElement.style.setProperty('--vw', `${this.innerWidth}px`);
+      document.documentElement.style.setProperty('--vw', `${this.innerWidth-17}px`);
     }
   }
 }
