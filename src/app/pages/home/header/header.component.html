@@ -1,9 +1,9 @@
 <div class="header-wrap">
   <div class="header-bg">
     @if (isLandscape$|async) {
-      <img [src]="'./assets/images/landscape_header.svg'" alt="" class="bg-elem">
+      <img ngSrc="landscape_header.svg" width="1080" height="1080" alt="" class="bg-elem" priority>
     } @else {
-      <img [src]="'./assets/images/portrait_header.svg'" alt="" class="bg-elem">
+      <img ngSrc="portrait_header.svg" width="1080" height="1080" alt="" class="bg-elem" priority>
     }
   </div>
 </div>

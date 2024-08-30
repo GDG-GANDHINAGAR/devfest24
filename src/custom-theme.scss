@@ -29,19 +29,14 @@ $df-23-theme: mat.define-theme((
 
 @font-face {
   font-family: 'GSB';
-  src: url(../public/fonts/GoogleSansDisplayBold.ttf) format('truetype');
+  src: url(https://df24.b-cdn.net/fonts/gsdb.woff) format('truetype');
 }
 
 @font-face {
   font-family: 'GSR';
   //noinspection CssUnknownTarget
-  src: url(../public/fonts/GoogleSansDisplay-Regular.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'GSBO';
-  //noinspection CssUnknownTarget
-  src: url(../public/fonts/Pso.woff) format('truetype');
+  src: url(https://df24.b-cdn.net/fonts/gsdr.woff) format('truetype');
+  unicode-range: U+000-5FF; /* Download only latin glyphs */
 }
 
 html, body {

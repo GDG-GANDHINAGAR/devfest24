@@ -1,13 +1,14 @@
 import {Component, HostListener, Inject, inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {AppService} from "../../../services/app.service";
-import {AsyncPipe, isPlatformBrowser, NgStyle} from "@angular/common";
+import {AsyncPipe, isPlatformBrowser, NgOptimizedImage, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     AsyncPipe,
-    NgStyle
+    NgStyle,
+    NgOptimizedImage
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.sass'

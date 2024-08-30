@@ -1,4 +1,4 @@
-import {AfterViewInit, Directive, ElementRef, inject, Input, Renderer2} from '@angular/core';
+import {AfterViewInit, Directive, ElementRef, HostListener, inject, Input, Renderer2} from '@angular/core';
 import {AppService} from "../services/app.service";
 
 @Directive({
@@ -11,6 +11,14 @@ export class LineHighlighterDirective implements AfterViewInit {
   @Input() mode: 'horizontal' | 'vertical' = 'horizontal';
   @Input() activeClass = 'active';
   @Input({required: true}) highlighter: HTMLDivElement & HTMLElement;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.elementBbox = this.getUL.getBoundingClientRect();
+    this.linkBbox = this.activeElement.getBoundingClientRect();
+    this.drawLine()
+  }
+
   children: HTMLElement[] = [];
   private activeElement: HTMLElement;
   elementBbox: DOMRect;

@@ -8,12 +8,19 @@ import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {getAuth, provideAuth} from '@angular/fire/auth';
 import {getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService} from '@angular/fire/analytics';
 import {getFirestore, provideFirestore} from '@angular/fire/firestore';
+import {IMAGE_LOADER, ImageLoaderConfig} from "@angular/common";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({eventCoalescing: true}),
     provideRouter(routes,),
     provideClientHydration(),
+    {
+      provide: IMAGE_LOADER,
+      useValue: (config: ImageLoaderConfig) => {
+        return `https://df24.b-cdn.net/${config.src}`;
+      },
+    },
     provideAnimationsAsync(),
     provideFirebaseApp(() => initializeApp({
       "projectId": "gdg-gnr",
@@ -24,6 +31,7 @@ export const appConfig: ApplicationConfig = {
       "messagingSenderId": "865471101877",
       "measurementId": "G-1YB0B0MY23"
     })), provideAuth(() => getAuth()),
+
     provideAnalytics(() => getAnalytics()),
     ScreenTrackingService,
     UserTrackingService,
