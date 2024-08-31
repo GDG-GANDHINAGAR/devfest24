@@ -12,3 +12,10 @@
   background-size: 32px 32px;
   background-color: #47d3ff;
 }
+
+@mixin retro-box {
+  background: $retro-white;
+  border-radius: $retro-border-radius;
+  border: $retro-border;
+  box-shadow: $retro-container-shadow;
+}

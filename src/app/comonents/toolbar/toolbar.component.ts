@@ -61,5 +61,5 @@ export class ToolbarComponent {
     this.app.toggleDrawer()
   }
 
-  protected readonly LINKS = LINKS;
+  protected readonly LINKS = LINKS.home;
 }

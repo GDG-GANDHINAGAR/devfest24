@@ -1,9 +1,17 @@
-<div class="header-wrap">
+<div class="header-wrap" [ngClass]="{'isMobile': isMobile$|async, 'isTab': isTab$|async}" >
+  <div class="header-logo">
+    <img ngSrc="logo_crooked.svg" width="630" height="563" alt="" class="bg-elem" priority>
+  </div>
   <div class="header-bg">
-    @if (isLandscape$|async) {
-      <img ngSrc="landscape_header.svg" width="1080" height="1080" alt="" class="bg-elem" priority>
-    } @else {
-      <img ngSrc="portrait_header.svg" width="1080" height="1080" alt="" class="bg-elem" priority>
-    }
+  </div>
+  <div class="header-elements">
+<!--    @for (img of images; track img) {-->
+<!--      <div class="box" [ngStyle]="{top: img.top+'px', left: img.left+'px'}">-->
+<!--        <img [ngSrc]="img.src" [width]="img.width" [height]="img.height" alt="" [ngStyle]="{-->
+<!--        height: getBaseSize(img).height,-->
+<!--        width: getBaseSize(img).width,-->
+<!--        }" >-->
+<!--      </div>-->
+<!--    }-->
   </div>
 </div>

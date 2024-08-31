@@ -1,5 +1,14 @@
-<app-header></app-header>
-<app-about-devfest/>
-<!--@for (link of LINKS; track link) {-->
-<!--  <div class="section" [id]="link"></div>-->
-<!--}-->
+<div class="home-wrap" observeIntersectionOnChildren [test]="sections()">
+  <section #section id="home">
+    <app-header></app-header>
+  </section>
+  <section #section id="about">
+    <app-about-devfest/>
+  </section>
+  <div #section class="section"></div>
+  <div #section class="section"></div>
+  <div #section class="section"></div>
+  <div #section class="section"
+       id="schedule"></div>
+<div #section class="section"></div>
+</div>

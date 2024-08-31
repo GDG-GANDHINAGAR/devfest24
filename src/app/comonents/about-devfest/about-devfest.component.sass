@@ -8,11 +8,10 @@
   display: flex
   justify-content: center
   flex-wrap: wrap
-  &.isPortable
-    flex-direction: column
 
   .title
     max-width: 500px
+    min-width: 300px
     flex: 1
 
     img
@@ -49,3 +48,9 @@
           -webkit-text-stroke: 1px #000
 
         .text-title
+
+  &.isPortable
+    flex-direction: column
+    .title
+      max-width: 400px
+      min-width: auto

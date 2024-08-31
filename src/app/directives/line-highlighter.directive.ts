@@ -53,11 +53,9 @@ export class LineHighlighterDirective implements AfterViewInit {
   setUpObservers() {
     const observers = new MutationObserver((mutations: MutationRecord[]) => {
       mutations.forEach((mutation: MutationRecord) => {
-        console.log(mutation);
         if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
           const target = mutation.target as HTMLElement;
           const isRemoval = mutation.oldValue?.includes(this.activeClass) && !target.classList.contains(this.activeClass);
-          console.log('isRemoval', isRemoval);
           if (isRemoval) return;
           this.activeElement = target;
           this.linkBbox = target.getBoundingClientRect();

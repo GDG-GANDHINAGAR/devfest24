@@ -5,14 +5,69 @@
   height: calc(var(--vh) - 100px)
   width: var(--vw)
   position: relative
-  padding: 10px
-  box-sizing: border-box
+  overflow: hidden
 
-  .header-bg
+  .header-logo
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 5
     width: 100%
     height: 100%
+    pointer-events: none
+    display: flex
+    justify-content: center
+    align-items: center
 
-    .bg-elem
-      width: 100%
-      height: 100%
+    img
+      max-width: 500px
+      width: calc(100% - 150px)
+      height: calc(100% - 150px)
       object-fit: contain
+
+
+  .header-bg
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    height: calc(100% - 100px)
+    width: calc(100% - 100px)
+    position: absolute
+    @include retro-box()
+    padding: 25px
+    box-sizing: border-box
+
+    &:after
+      height: 100%
+      width: 100%
+      content: ""
+      border: $retro-border
+      display: block
+      border-radius: $retro-border-radius
+      @include checkYellow()
+  .header-elements
+    .box
+      position: absolute
+      z-index: 4
+
+  &.isMobile
+
+    .header-logo
+      img
+        width: calc(100% - 100px)
+        height: calc(100% - 100px)
+
+    .header-bg
+      height: calc(100% - 25px)
+      width: calc(100% - 25px)
+
+  &.isTab
+    .header-logo
+      img
+        width: calc(100% - 110px)
+        height: calc(100% - 110px)
+
+    .header-bg
+      height: calc(100% - 50px)
+      width: calc(100% - 50px)

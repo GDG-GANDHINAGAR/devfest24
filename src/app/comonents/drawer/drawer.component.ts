@@ -24,7 +24,7 @@ import {LineHighlighterDirective} from "../../directives/line-highlighter.direct
   styleUrl: './drawer.component.sass'
 })
 export class DrawerComponent {
-  protected readonly LINKS = LINKS;
+  protected readonly LINKS = LINKS.home;
   protected readonly AppColors = AppColors;
   private router = inject(Router);
   public route = inject(ActivatedRoute);

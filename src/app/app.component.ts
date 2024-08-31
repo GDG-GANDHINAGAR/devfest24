@@ -2,26 +2,26 @@ import {Component, HostListener, Inject, OnInit, PLATFORM_ID} from '@angular/cor
 import {RouterOutlet} from '@angular/router';
 import {MatToolbar} from "@angular/material/toolbar";
 import {RootPageComponent} from "./pages/root-page/root-page.component";
-import {isPlatformBrowser} from "@angular/common";
+import {isPlatformBrowser, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatToolbar, RootPageComponent, RootPageComponent],
+  imports: [RouterOutlet, MatToolbar, RootPageComponent, RootPageComponent, NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
 export class AppComponent implements OnInit {
-  innerWidth;
-  innerHeight;
-  isBrowser;
+  innerWidth: number;
+  innerHeight: number;
+  isBrowser: boolean;
 
   @HostListener('window:resize', ['$event'])
   resize() {
     this.setVars()
   }
 
-  constructor(@Inject(PLATFORM_ID) platformId) {
+  constructor(@Inject(PLATFORM_ID) platformId: any) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
       this.innerWidth = window.innerWidth;
       this.innerHeight = window.innerHeight;
       document.documentElement.style.setProperty('--vh', `${this.innerHeight}px`);
-      document.documentElement.style.setProperty('--vw', `${this.innerWidth-17}px`);
+      document.documentElement.style.setProperty('--vw', `${this.innerWidth - 17}px`);
     }
   }
 }
