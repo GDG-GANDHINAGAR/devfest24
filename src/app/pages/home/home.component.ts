@@ -14,8 +14,11 @@ import {LINKS} from "../../constants/links";
 import {AboutDevfestComponent} from "../../comonents/about-devfest/about-devfest.component";
 import {IntersectionDirective} from "../../directives/intersection.directive";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ViewportScroller} from "@angular/common";
+import {NgOptimizedImage, ViewportScroller} from "@angular/common";
 import {AppService} from "../../services/app.service";
+import {ParallaxDirective} from "../../directives/parallax.directive";
+import {ParallaxScrollDirective} from "../../directives/ngx-parallax-scroll.directive";
+import {IParallaxScrollConfig} from "../../directives/ngx-parallax.interfaces";
 
 @Component({
   selector: 'app-home',
@@ -23,7 +26,10 @@ import {AppService} from "../../services/app.service";
   imports: [
     HeaderComponent,
     AboutDevfestComponent,
-    IntersectionDirective
+    IntersectionDirective,
+    NgOptimizedImage,
+    ParallaxDirective,
+    ParallaxScrollDirective
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.sass'
@@ -53,6 +59,13 @@ export class HomeComponent implements AfterViewInit {
       relativeTo: this.route,
     })
   });
+  config: IParallaxScrollConfig = {
+    parallaxSpeed: 0.2,
+    parallaxSmoothness: 1,
+    parallaxDirection: 'vertical',
+    parallaxTimingFunction: 'ease',
+    parallaxThrottleTime: 10
+  };
 
   constructor() {
 

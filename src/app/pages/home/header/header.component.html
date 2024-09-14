@@ -1,17 +1,38 @@
-<div class="header-wrap" [ngClass]="{'isMobile': isMobile$|async, 'isTab': isTab$|async}" >
+<div class="header-wrap" [ngClass]="{'isMobile': isMobile$|async, 'isTablet': isTab$|async}">
   <div class="header-logo">
-    <img ngSrc="logo_crooked.svg" width="630" height="563" alt="" class="bg-elem" priority>
+    <img ngSrc="image/df_date.svg" width="500" height="500" alt="" class="bg-elem" priority>
   </div>
-  <div class="header-bg">
+  <div class="call-to-action">
+    <button
+      type="button"
+      aria-label="buy tickets"
+      retro-button
+      [color]="AppColors.WHITE"
+      class="menu">
+      Buy Tickets
+    </button>
+    <button
+      type="button"
+      [color]="AppColors.WHITE"
+      aria-label="buy tickets"
+      retro-button
+      class="menu">
+      Call For Speakers
+    </button>
   </div>
-  <div class="header-elements">
-<!--    @for (img of images; track img) {-->
-<!--      <div class="box" [ngStyle]="{top: img.top+'px', left: img.left+'px'}">-->
-<!--        <img [ngSrc]="img.src" [width]="img.width" [height]="img.height" alt="" [ngStyle]="{-->
-<!--        height: getBaseSize(img).height,-->
-<!--        width: getBaseSize(img).width,-->
-<!--        }" >-->
-<!--      </div>-->
-<!--    }-->
+  <div class="caption-wrap">
+    <div class="box caption">
+      <h1 class="text">An amazing Day of impactful ideas,<br> actionable insights, inspiring connections</h1>
+    </div>
+    <div class="content">
+      @for (box of HEADER_TEXT.boxes; track box) {
+        <div class="box">
+          <div class="text">
+            {{ box.value }}
+          </div>
+          <div class="text-title">{{ box.title }}</div>
+        </div>
+      }
+    </div>
   </div>
 </div>

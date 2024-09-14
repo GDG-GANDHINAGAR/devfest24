@@ -1,3 +1,27 @@
 .section
   height: var(--vh)
   width: var(--vw)
+
+.home-wrap
+  overflow: hidden
+  position: relative
+
+
+.bg-ele
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translate(-50%, -50%)
+  z-index: -2
+  pointer-events: none
+
+  &.right
+    right: 0
+    top: 100%
+    left: auto
+    transform: translate(50%, -50%)
+
+  img
+    width: 100vw
+    height: 100vh
+    object-fit: contain

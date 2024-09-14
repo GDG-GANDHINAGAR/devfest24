@@ -24,16 +24,14 @@ export class IntersectionDirective implements OnDestroy, OnInit, AfterViewInit {
   @Output() visible = new EventEmitter<IntersectionObserverEntry>();
 
   ngAfterViewInit(): void {
-    console.log(this.parent)
-    console.log(this.test)
+    // console.log(this.parent)
+    // console.log(this.test)
   }
 
   ngOnInit(): void {
-
   }
 
   ngOnDestroy(): void {
-
   }
 
   // private observer: IntersectionObserver | undefined;

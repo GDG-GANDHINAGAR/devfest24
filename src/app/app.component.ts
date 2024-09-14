@@ -31,10 +31,10 @@ export class AppComponent implements OnInit {
 
   setVars() {
     if (this.isBrowser) {
-      this.innerWidth = window.innerWidth;
-      this.innerHeight = window.innerHeight;
+      this.innerWidth = document.documentElement.scrollWidth;
+      this.innerHeight = document.documentElement.scrollHeight;
       document.documentElement.style.setProperty('--vh', `${this.innerHeight}px`);
-      document.documentElement.style.setProperty('--vw', `${this.innerWidth - 17}px`);
+      document.documentElement.style.setProperty('--vw', `${this.innerWidth}px`);
     }
   }
 }

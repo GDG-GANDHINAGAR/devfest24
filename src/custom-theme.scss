@@ -51,7 +51,6 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: #00ff00;
 }
 
 mat-sidenav-container {
@@ -66,9 +65,9 @@ mat-sidenav {
 }
 
 mat-toolbar {
-  @include toolbarTheme()
+  @include toolbarTheme();
 }
 
 button.retro-button {
-  @include retroButtonTheme()
+  @include retroButtonTheme();
 }

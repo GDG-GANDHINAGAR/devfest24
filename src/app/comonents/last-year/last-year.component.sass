@@ -1,0 +1,63 @@
+@import 'variables'
+.box
+  flex-direction: row
+  width: 100%
+  box-sizing: border-box
+  justify-content: space-between
+  gap: 20px
+  overflow: hidden
+  max-width: 1400px
+
+  .title
+    font-family: 'GSB', sans-serif
+    color: $retro-red
+    -webkit-text-stroke: 1px #000
+    display: flex
+    justify-content: center
+    font-size: 3.4em
+
+  .video-wrap
+    overflow: hidden
+    border-radius: $retro-border-radius
+    border: $retro-border
+    min-width: 640px
+    width: 100%
+    height: 400px
+    margin: 0 -1px
+
+    youtube-player
+      display: block
+      height: 100%
+
+    ::ng-deep
+      div
+        height: 100% !important
+      .youtube-player-placeholder
+        width: 100% !important
+        height: 100% !important
+
+      iframe
+        width: 100% !important
+        height: 100% !important
+
+  &.isTablet
+
+    flex-direction: column
+    align-items: center
+
+    .video-wrap
+      min-width: auto
+
+    .title
+      max-width: none
+
+  &.isMobile
+
+    flex-direction: column
+    align-items: center
+
+    .video-wrap
+      min-width: auto
+
+    .title
+      max-width: none

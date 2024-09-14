@@ -11,7 +11,7 @@
     </button>
   }
   <div class="brand" [ngClass]="{center: (isPortable$|async)}">
-    <img src="./assets/images/logo.svg" alt="">
+    <img ngSrc="image/logo.svg" alt="" width="208" height="100">
   </div>
   <div class="actions">
     @if (!(isPortable$|async)) {

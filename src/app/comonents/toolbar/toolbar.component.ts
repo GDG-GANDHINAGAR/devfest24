@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {MatButton, MatIconButton} from "@angular/material/button";
-import {AsyncPipe, NgClass} from "@angular/common";
+import {AsyncPipe, NgClass, NgOptimizedImage} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
 import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 import {Observable} from "rxjs";
@@ -15,18 +15,19 @@ import {LineHighlighterDirective} from "../../directives/line-highlighter.direct
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-  imports: [
-    MatButton,
-    AsyncPipe,
-    MatIcon,
-    MatIconButton,
-    RetroButtonDirective,
-    NgClass,
-    RouterLink,
-    LineHighlighterDirective,
-    RouterLinkActive,
-    RouterModule
-  ],
+    imports: [
+        MatButton,
+        AsyncPipe,
+        MatIcon,
+        MatIconButton,
+        RetroButtonDirective,
+        NgClass,
+        RouterLink,
+        LineHighlighterDirective,
+        RouterLinkActive,
+        RouterModule,
+        NgOptimizedImage
+    ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.sass'
 })

@@ -1,14 +1,14 @@
 <div class="home-wrap" observeIntersectionOnChildren [test]="sections()">
+  <div class="bg-ele left">
+    <img ngSrc="image/rainbow.svg" width="500" height="500" alt="" priority>
+  </div>
+  <div class="bg-ele right">
+    <img ngSrc="image/heart.svg" width="500" height="500" alt="" priority>
+  </div>
   <section #section id="home">
     <app-header></app-header>
   </section>
   <section #section id="about">
-    <app-about-devfest/>
+    <app-about-devfest></app-about-devfest>
   </section>
-  <div #section class="section"></div>
-  <div #section class="section"></div>
-  <div #section class="section"></div>
-  <div #section class="section"
-       id="schedule"></div>
-<div #section class="section"></div>
 </div>
