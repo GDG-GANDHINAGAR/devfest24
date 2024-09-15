@@ -1,4 +1,4 @@
-export type Ticket = {
+export type TicketType = {
   title: string;
   points: string[];
   soldOut: boolean;

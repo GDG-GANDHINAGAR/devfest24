@@ -1,7 +1,7 @@
 import {Component, inject, Input} from '@angular/core';
 import {AsyncPipe, NgClass, NgOptimizedImage} from "@angular/common";
 import {AppService} from "../../services/app.service";
-import {Testimonial} from "../../types/testimonials";
+import {Testimonial} from "../../types/testimonials.type";
 
 @Component({
   selector: 'app-testimonial',

@@ -7,6 +7,8 @@ import {TESTIMONIALS, TICKETS} from "../../constants/data";
 import {WhyBuyTicketComponent} from "../why-buy-ticket/why-buy-ticket.component";
 import {LastYearComponent} from "../last-year/last-year.component";
 import {TicketsComponent} from "../tickets/tickets.component";
+import {WhatIsDevfestComponent} from "../what-is-devfest/what-is-devfest.component";
+import {PastSpeakersComponent} from "../past-speakers/past-speakers.component";
 
 @Component({
   selector: 'app-about-devfest',
@@ -19,7 +21,9 @@ import {TicketsComponent} from "../tickets/tickets.component";
     TestimonialComponent,
     WhyBuyTicketComponent,
     LastYearComponent,
-    TicketsComponent
+    TicketsComponent,
+    WhatIsDevfestComponent,
+    PastSpeakersComponent
   ],
   templateUrl: './about-devfest.component.html',
   styleUrl: './about-devfest.component.sass'

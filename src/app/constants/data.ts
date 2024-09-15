@@ -1,5 +1,5 @@
-import {Testimonial} from "../types/testimonials";
-import {Ticket} from "../types/ticket";
+import {Testimonial} from "../types/testimonials.type";
+import {TicketType} from "../types/ticket.type";
 
 export const HEADER_TEXT = {
   caption: 'Welcome to the',
@@ -22,7 +22,7 @@ export const TESTIMONIALS: { [key: string]: Testimonial } = {
     outSide: 'It’s especially rewarding when a fellow community member recognizes Devfest Gandhinagar’s attention to detail,\n impressive scale, and dedication to attendee experience!'
   }
 }
-export const TICKETS: Ticket[] = [
+export const TICKETS: TicketType[] = [
   {
     title: 'Student Ticket',
     points: [
@@ -99,3 +99,14 @@ export const TICKETS: Ticket[] = [
   }
 ];
 
+export const PAST_SPEAKERS= [
+    {
+      img: 'speakers/ashokv.jpg',
+      name: 'Ahsok Vishavakarma',
+      jobTitle: 'CTO',
+      company: 'Impulsiveweb',
+      location: 'Noida',
+      testimonials: 'I’ve always valued DevFest Gandhinagar for its enriching sessions and invaluable networking opportunities and am excited to see what this year’s event holds!',
+      socials: []
+    },
+]

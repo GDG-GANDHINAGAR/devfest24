@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {RetroButtonDirective} from "../../directives/retro-button.directive";
 import {NgClass} from "@angular/common";
-import {Ticket} from "../../types/ticket";
+import {TicketType} from "../../types/ticket.type";
 import {TICKETS} from "../../constants/data";
 
 @Component({
