@@ -127,7 +127,7 @@ export const PAST_SPEAKERS: SpeakerData[] = [
   }, {
     img: 'speakers/ayush.jpg',
     name: 'Ayush Shekhar',
-    jobTitle: 'CSE',
+    jobTitle: 'Solutions Architect',
     company: 'FlutterFlow',
     location: 'New Delhi',
     testimonials: "Great networking and insightful sessions at Devfest Gandhinagar!",
