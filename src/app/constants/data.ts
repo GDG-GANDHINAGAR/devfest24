@@ -18,7 +18,7 @@ export const TESTIMONIALS: { [key: string]: Testimonial } = {
     name: 'Jay Thakkar,',
     text: 'Remarkable scope, exceptional focus on experience',
     image: 'image/jt.jpg',
-    job: 'Some Post, company',
+    job: 'Machine Learning Associate, Binoloop Inc',
     subJob: 'TFUG SURAT',
     outSide: 'It’s especially rewarding when a fellow community member recognizes Devfest Gandhinagar’s attention to detail,\n impressive scale, and dedication to attendee experience!'
   }
