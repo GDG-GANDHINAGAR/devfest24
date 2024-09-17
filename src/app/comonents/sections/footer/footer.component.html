@@ -1,0 +1,18 @@
+<footer>
+  <button retro-button [icon]="true" class="goToTop" (click)="onGoToTopClick()">
+    <mat-icon> keyboard_arrow_up</mat-icon>
+  </button>
+  <div class="logo">Devfest Gandhinagar 2024</div>
+  <ul class="links-wrapper" [ngClass]="{'isOnMobile': isMobile$|async}">
+    @for (link of FOOTER_LINKS; track link) {
+      <li [ngClass]="{'isOnMobile': isMobile$|async}">
+        @if (link.isInternal) {
+          <a [routerLink]="link.path">{{ link.text }}</a>
+        } @else {
+          <a target="_blank" [href]="link.path">{{ link.text }}</a>
+        }
+      </li>
+    }
+  </ul>
+</footer>
+

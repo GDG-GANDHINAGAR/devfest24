@@ -1,0 +1,59 @@
+@import "variables"
+.ticket-wrap
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  grid-column-gap: 15px
+  grid-row-gap: 15px
+  justify-content: center
+
+.box.ticket
+  flex: 1
+  position: relative
+  overflow: hidden
+  gap: 10px
+
+  .ticket-title
+    font-size: 2.8em
+    margin: 0
+    font-family: "GSB", sans-serif
+    color: $retro-red
+    -webkit-text-stroke: 1px #000
+
+  .points
+    padding-left: 20px
+
+    .point
+
+  .price
+    display: flex
+    flex-direction: column
+    gap: 5px
+
+    .date
+
+    .base
+      font-size: 2em
+      margin: 0
+      font-family: "GSB", sans-serif
+      color: $retro-red
+      -webkit-text-stroke: 1px #000
+
+    .action
+
+  .sold-out
+    width: 100%
+    transform: rotate(45deg) translate(-20px, -40px)
+    position: absolute
+    background: $retro-red
+    color: $retro-white
+    border: 2px solid #000
+    bottom: 0
+    left: -50%
+    white-space: nowrap
+
+  .spacer
+    flex: 1
+
+  &.sold
+    border: 1px solid #939393
+

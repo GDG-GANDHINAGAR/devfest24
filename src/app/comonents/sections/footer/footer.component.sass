@@ -1,0 +1,50 @@
+@import "variables"
+footer
+  background: $retro-white
+  border-top: $retro-border
+  display: flex
+  position: relative
+  flex-direction: column
+  padding: 20px 20px 0 20px
+
+  .goToTop
+    position: absolute
+    color: #000000
+    z-index: 100
+    top: -24px
+    right: 24px
+    background: white
+    height: 48px
+    width: 48px
+    border-radius: 30px
+
+  .logo
+    font-family: 'GSB', sans-serif
+    color: $retro-red
+    -webkit-text-stroke: 1px #000
+    font-size: 3.4em
+
+  .links-wrapper
+    list-style: none
+    display: flex
+    padding: 0
+    justify-content: flex-start
+    align-items: center
+
+    &.isOnMobile
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+
+    li:first-child
+      padding-left: 0
+
+    li
+      padding: 10px
+
+      a
+        text-decoration: none
+        color: #000
+
+      &.isOnMobile
+        padding: 2px

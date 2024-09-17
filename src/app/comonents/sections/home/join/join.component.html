@@ -1,0 +1,32 @@
+<div class="wrapper display-box" [ngClass]="{'isOnMobile': isMobile$|async}">
+  <div class="box technologies " [ngClass]="{'isOnMobile': isMobile$|async}">
+    <h1 class="title">
+      Stay updated on the products you love
+    </h1>
+    <div class="text-content">
+      Get hands-on experience with the latest innovations in various tech domains. Witness live demonstrations and
+      interact with state-of-the-art technologies shaping our world.
+    </div>
+    <div class="details-content">
+      @for (tech of TECHS; track tech) {
+        <a class="tech" [href]="tech.link" target="_blank">
+          <img [src]="tech.logo" [alt]="tech.name">
+        </a>
+      }
+    </div>
+  </div>
+  <div class="join-gdg box">
+    <h1>
+      Join the Community of Developers
+    </h1>
+    <h2>
+      GDG Gandhinagar
+    </h2>
+    <button retro-button (click)="link.click()">
+      <a class="register-wrapper df-button" href="https://chat.whatsapp.com/DEtzwaWCKHqDITVD8QY3gA"
+         target="_blank" #link>
+        Join GDG Gandhinagar
+      </a>
+    </button>
+  </div>
+</div>

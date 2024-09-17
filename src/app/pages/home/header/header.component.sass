@@ -1,73 +1,76 @@
 @import "variables"
 @import "mixins/patterns"
 @import "utils"
+
 .header-wrap
-  height: calc(var(--vh) - 100px)
-  width: var(--vw)
-  position: relative
-  overflow: hidden
+  width: 100%
+  display: flex
+  justify-content: space-around
+  flex-direction: column
+  align-items: center
+  gap: 50px
+  padding: 0 20px
+  box-sizing: border-box
+  min-height: calc(100vh - 100px)
+  max-width: 1400px
+  margin: 0 auto
+
 
   .header-logo
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    z-index: 5
-    width: 100%
-    height: 100%
-    pointer-events: none
     display: flex
     justify-content: center
     align-items: center
+    margin-top: 20px
+    width: 100%
 
     img
-      max-width: 500px
-      width: calc(100% - 150px)
-      height: calc(100% - 150px)
+      width: 100%
+      height: 100%
+      max-width: 600px
       object-fit: contain
 
+  .call-to-action
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    gap: 20px
 
-  .header-bg
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    height: calc(100% - 100px)
-    width: calc(100% - 100px)
-    position: absolute
-    @include retro-box()
-    padding: 25px
-    box-sizing: border-box
+    h1
+      margin: 0
 
-    &:after
-      height: 100%
-      width: 100%
-      content: ""
-      border: $retro-border
-      display: block
-      border-radius: $retro-border-radius
-      @include checkYellow()
-  .header-elements
-    .box
-      position: absolute
-      z-index: 4
+  .caption-wrap
+    display: flex
+    gap: 20px
+    width: 100%
+
+    .caption
+      padding: 30px
+      font-family: 'GSB'
+      flex: 1
+
+      .text
+        font-size: 2.5rem
+        margin: 0
+
+    .content
+      flex: 1
+      display: grid
+      grid-template-columns: repeat(auto-fit, minmax(135px, 1fr))
+      grid-template-rows: auto
+      grid-column-gap: 15px
+      grid-row-gap: 15px
+
+  &.isMobile, &.isTablet
+    .caption-wrap
+      flex-direction: column
+
+
+      .caption, .content
+        flex: auto
 
   &.isMobile
-
-    .header-logo
-      img
-        width: calc(100% - 100px)
-        height: calc(100% - 100px)
-
-    .header-bg
-      height: calc(100% - 25px)
-      width: calc(100% - 25px)
-
-  &.isTab
-    .header-logo
-      img
-        width: calc(100% - 110px)
-        height: calc(100% - 110px)
-
-    .header-bg
-      height: calc(100% - 50px)
-      width: calc(100% - 50px)
+    .caption-wrap
+      .caption
+        .text
+          font-size: 2rem

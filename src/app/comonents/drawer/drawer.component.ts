@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {LINKS} from "../../constants/links";
-import {AsyncPipe, NgClass} from "@angular/common";
+import {AsyncPipe, NgClass, NgOptimizedImage} from "@angular/common";
 import {RetroButtonDirective} from "../../directives/retro-button.directive";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {Observable} from "rxjs";
@@ -18,7 +18,8 @@ import {LineHighlighterDirective} from "../../directives/line-highlighter.direct
     RetroButtonDirective,
     RouterLink,
     LineHighlighterDirective,
-    NgClass
+    NgClass,
+    NgOptimizedImage
   ],
   templateUrl: './drawer.component.html',
   styleUrl: './drawer.component.sass'

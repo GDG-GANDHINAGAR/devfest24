@@ -1,0 +1,18 @@
+<div class="past-speaker-wrap">
+  <div class="box">
+    <h2 class="title">
+      Past Speakers
+    </h2>
+    <!--    <div class="content">-->
+    <!--      Over the years, DevFest has hosted some of the most influential speakers in the tech industry. Here are a few of the-->
+    <!--      speakers who have graced our stage.-->
+    <!--    </div>-->
+  </div>
+  <div class="card-wrap">
+    @for (speaker of PAST_SPEAKERS; track speaker) {
+      <app-speaker-card [speaker]="speaker"></app-speaker-card>
+
+    }
+
+  </div>
+</div>

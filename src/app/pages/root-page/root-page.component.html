@@ -1,47 +1,14 @@
-<!--<mat-sidenav-container class="sidenav-container">-->
-<!--  <mat-sidenav position="start" mode="over" [opened]="sideNavState()"  (closed)="closeDrawer()">-->
-<!--    <app-drawer></app-drawer>-->
-<!--  </mat-sidenav>-->
-<!--  <mat-sidenav-content #content>-->
-<!--    <mat-toolbar color="primary">-->
-<!--      <div class="toolbar-wrap">-->
-<!--        <app-toolbar></app-toolbar>-->
-<!--      </div>-->
-<!--    </mat-toolbar>-->
-<!--    <router-outlet></router-outlet>-->
-<!--  </mat-sidenav-content>-->
-<!--</mat-sidenav-container>-->
-<div class="bg">
-  <!--  <img src="assets/bg.jpg" alt="">-->
-  <div class="boxes-wrapper ">
-    <div class="prefix sections">
-      @for (rank of prefix; track rank; let index = $index) {
-        <div class="box" [ngClass]="{'blank': rank.pos == null}" [matMenuTriggerFor]="menu"
-             [matMenuTriggerData]="{pos: index, suffix: false}">
-          @if (rank.pos != null) {
-            <img src="assets/medals/{{rank.pos}}.png" alt="">
-          }
-        </div>
-      }
-    </div>
-    <div class="suffix sections">
-      @for (rank of suffix; track rank; let index = $index) {
-        <div class="box" [ngClass]="{'blank': rank.pos == null}" [matMenuTriggerFor]="menu"
-             [matMenuTriggerData]="{pos: index, suffix: true}">
-          @if (rank.pos != null) {
-            <img src="assets/medals/{{rank.pos}}.png" alt="">
-          }
-        </div>
-      }
-    </div>
-  </div>
-  <mat-menu #menu="matMenu">
-    <ng-template matMenuContent let-pos="pos" let-suffix='suffix'>
-      @for (rank of imagesMap; track rank; let index = $index) {
-        <button mat-menu-item (click)="selectPos(pos, suffix, index)">
-          <div>{{ rank.name }}</div>
-        </button>
-      }
-    </ng-template>
-  </mat-menu>
-</div>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav position="start" mode="over" [opened]="sideNavState()"  (closed)="closeDrawer()">
+    <app-drawer></app-drawer>
+  </mat-sidenav>
+  <mat-sidenav-content #content>
+    <mat-toolbar color="primary">
+      <div class="toolbar-wrap">
+        <app-toolbar></app-toolbar>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

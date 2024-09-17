@@ -13,9 +13,7 @@ import {IMAGE_LOADER, ImageLoaderConfig} from "@angular/common";
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({eventCoalescing: true}),
-    provideRouter(routes, withInMemoryScrolling({
-      anchorScrolling: "enabled", scrollPositionRestoration: "enabled"
-    })),
+    provideRouter(routes),
     provideClientHydration(),
     {
       provide: IMAGE_LOADER,

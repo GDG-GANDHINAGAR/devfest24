@@ -1,0 +1,11 @@
+<div class="box" #wrapper [ngClass]="{'isMobile': isMobile$|async, 'isTablet': isTab$|async}">
+  <div class="title">
+    Explore how it was last year
+  </div>
+  <div class="video-wrap">
+    <youtube-player [videoId]="videoId"></youtube-player>
+  </div>
+  <div class="bg">
+    <img ngSrc="image/cam.svg" alt="" height="250" width="250">
+  </div>
+</div>
