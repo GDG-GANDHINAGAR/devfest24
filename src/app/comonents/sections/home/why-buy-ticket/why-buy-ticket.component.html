@@ -7,6 +7,12 @@
     <h3>
       Not sure how to convince your boss?
     </h3>
-    <button retro-button>Download this guide to know how</button>
+     <button retro-button (click)="link.click()">
+      <a href="https://raw.githubusercontent.com/GDG-GANDHINAGAR/devfest24/refs/heads/main/public/assets/DF_24_why_attend"
+         target="_blank" #link>
+        Download this guide to know how
+      </a>
+    </button>
   </div>
 </div>
+
