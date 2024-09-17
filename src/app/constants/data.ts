@@ -103,9 +103,9 @@ export const TICKETS: TicketType[] = [
 export const PAST_SPEAKERS: SpeakerData[] = [
   {
     img: 'speakers/ashokv.jpg',
-    name: 'Ahsok Vishavakarma',
+    name: 'Ahsok Vishwakarma',
     jobTitle: 'CTO',
-    company: 'Impulsiveweb',
+    company: 'Impulsive Web',
     location: 'Noida',
     testimonials: "Incredible energy! A must-attend for developers in Gandhinagar.",
     socials: [
@@ -300,16 +300,6 @@ export const FOOTER_LINKS = [
     isInternal: false,
     path: 'https://developers.google.com/womentechmakers'
   },
-  // {
-  //   text: 'FAQ',
-  //   isInternal: true,
-  //   path: '/faq'
-  // },
-  // {
-  //   text: 'Code of conduct',
-  //   isInternal: true,
-  //   path: '/code-of-conduct'
-  // },
   {
     text: 'Community Guidelines',
     isInternal: false,
