@@ -192,8 +192,8 @@ export const PAST_SPEAKERS: SpeakerData[] = [
     ]
   }, {
     img: 'speakers/dhrumil.jpg',
-    name: 'Lead Architect',
-    jobTitle: 'Head of product',
+    name: 'Dhrumil Shah',
+    jobTitle: 'Lead Architect',
     company: 'Tata Digital',
     location: 'Ahmedabad',
     testimonials: "Engaging and well-organized! Looking forward to the next one.",
