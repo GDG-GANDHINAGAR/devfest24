@@ -10,24 +10,24 @@
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
   }
-  <div class="brand" [ngClass]="{center: (isPortable$|async)}">
+  <a class="brand" [ngClass]="{center: (isPortable$|async)}" routerLink="home">
     <img ngSrc="image/logo.svg" alt="" width="208" height="100">
-  </div>
+  </a>
   <div class="actions">
     @if (!(isPortable$|async)) {
-      <div class="links" retro-highlight [highlighter]="highlighter">
+      <div class="links">
         <ul>
           @for (link of LINKS; track link) {
-            <li routerLink="home" [fragment]="link.link">
+            <li routerLink="home">
               {{ link.title }}
             </li>
           }
         </ul>
-        <div class="highlighter" #highlighter></div>
       </div>
-      <button retro-button>
-        Get Tickets
-      </button>
+<!--      <button retro-button>-->
+<!--        Get Tickets-->
+<!--      </button>-->
     }
   </div>
 </div>
+

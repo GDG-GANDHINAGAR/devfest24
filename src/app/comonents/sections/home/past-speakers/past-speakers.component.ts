@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {SpeakerCardComponent} from "../speaker-card/speaker-card.component";
-import {PAST_SPEAKERS} from "../../constants/data";
+import {SpeakerCardComponent} from "../../../speaker-card/speaker-card.component";
+import { PAST_SPEAKERS } from '../../../../constants/data';
 
 @Component({
   selector: 'app-past-speakers',

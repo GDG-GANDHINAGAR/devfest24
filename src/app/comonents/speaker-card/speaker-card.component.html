@@ -9,6 +9,10 @@
   </div>
   <div class="testimonials">{{ speaker.testimonials }}</div>
   <div class="socials">
-    <!-- Social links can be added here -->
+    @for (social of speaker.socials; track social) {
+      <a [href]="social.link" target="_blank">
+        <img [ngSrc]="social.icon" alt="" width="30" height="30">
+      </a>
+    }
   </div>
 </div>

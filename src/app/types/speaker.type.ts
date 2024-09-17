@@ -1,9 +1,12 @@
-export type SpeakerData ={
+export type SpeakerData = {
   img: string;
   name: string;
   jobTitle: string;
   company: string;
   location: string;
   testimonials: string;
-  socials?: string[]; // Optional property
+  socials?: {
+    link: string
+    icon: string
+  }[]; // Optional property
 }

@@ -6,15 +6,15 @@
     <div class="links">
       <ul>
         @for (link of LINKS; track link) {
-          <li [ngClass]="{'active':(route.fragment|async)==link.link}" (click)="navigateTo(link.link)">
+          <li [routerLink]="[link.link]">
             {{ link.title }}
           </li>
         }
       </ul>
-      <div class="highlighter" #highlighter></div>
+      <div class="highlighter"></div>
     </div>
-    <button retro-button class="ticket-button" [color]="AppColors.WHITE">
-      Get Tickets
-    </button>
+<!--    <button retro-button class="ticket-button" [color]="AppColors.WHITE">-->
+<!--      Get Tickets-->
+<!--    </button>-->
   </div>
 </div>

@@ -1,7 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {AppService} from "../../services/app.service";
 import {YouTubePlayer} from "@angular/youtube-player";
-import {AsyncPipe, NgClass} from "@angular/common";
+import {AsyncPipe, NgClass, NgOptimizedImage} from "@angular/common";
+import {AppService} from "../../../../services/app.service";
 
 @Component({
   selector: 'app-last-year',
@@ -9,7 +9,8 @@ import {AsyncPipe, NgClass} from "@angular/common";
   imports: [
     YouTubePlayer,
     AsyncPipe,
-    NgClass
+    NgClass,
+    NgOptimizedImage
   ],
   templateUrl: './last-year.component.html',
   styleUrl: './last-year.component.sass'

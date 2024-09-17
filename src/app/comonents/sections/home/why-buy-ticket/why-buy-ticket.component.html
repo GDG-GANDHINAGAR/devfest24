@@ -1,5 +1,7 @@
-<div class="box">
-  <img ngSrc="image/calender.svg" alt="" width="250" height="250" class="char">
+<div class="box" [ngClass]="{'isMobile': isMobile$|async, 'isTab': isTab$|async}">
+  @if (!((isMobile$|async) || (isTab$|async))) {
+    <img ngSrc="image/calender.svg" alt="" width="250" height="250" class="char">
+  }
   <img ngSrc="image/rainbow.svg" alt="" width="250" height="250" class="bg-elem">
   <div class="title">
     <h3>

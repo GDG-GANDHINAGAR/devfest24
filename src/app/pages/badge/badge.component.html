@@ -1,0 +1,13 @@
+<div class="canvas-wrap" style="width: 250px;height: 250px">
+  <canvas #canvasRef style="width: 100%; border-radius: 12px"></canvas>
+</div>
+@if (downloadVisible) {
+  <button retro-button (click)="download()">
+    <i class="mdi mdi-arrow-down-bold-circle-outline"></i>
+    Download
+  </button>
+}
+<button retro-button (click)="file.click()">
+  upload image
+</button>
+<input type="file" #file (change)="upload($event)" hidden="">

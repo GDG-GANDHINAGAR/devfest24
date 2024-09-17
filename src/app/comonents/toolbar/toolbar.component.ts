@@ -15,19 +15,19 @@ import {LineHighlighterDirective} from "../../directives/line-highlighter.direct
 @Component({
   selector: 'app-toolbar',
   standalone: true,
-    imports: [
-        MatButton,
-        AsyncPipe,
-        MatIcon,
-        MatIconButton,
-        RetroButtonDirective,
-        NgClass,
-        RouterLink,
-        LineHighlighterDirective,
-        RouterLinkActive,
-        RouterModule,
-        NgOptimizedImage
-    ],
+  imports: [
+    MatButton,
+    AsyncPipe,
+    MatIcon,
+    MatIconButton,
+    RetroButtonDirective,
+    NgClass,
+    RouterLink,
+    LineHighlighterDirective,
+    RouterLinkActive,
+    RouterModule,
+    NgOptimizedImage
+  ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.sass'
 })
@@ -35,27 +35,10 @@ export class ToolbarComponent {
   private breakpointObserver = inject(BreakpointObserver);
   private app = inject(AppService);
   private router = inject(Router);
-  public route = inject(ActivatedRoute);
   isPortable$: Observable<boolean> = this.app.isPortable$
 
   constructor() {
-    this.route.fragment.subscribe(fragment => {
-      if (!fragment) {
-        this.navigateTo('home')
-      }
-    })
-    this.breakpointObserver.observe(Breakpoints.Handset).subscribe(value => {
-      if (!value.matches) {
-        this.app.closeDrawer()
-      }
-    })
-  }
 
-  navigateTo(fragment: string) {
-    this.router.navigate([], {
-      relativeTo: this.route,
-      fragment: fragment
-    });
   }
 
   toggleDrawer() {

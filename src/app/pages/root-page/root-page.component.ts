@@ -9,6 +9,7 @@ import {ToolbarComponent} from "../../comonents/toolbar/toolbar.component";
 import {AppService} from "../../services/app.service";
 import {DrawerComponent} from "../../comonents/drawer/drawer.component";
 import {RouterOutlet} from "@angular/router";
+import {FooterComponent} from "../../comonents/sections/footer/footer.component";
 
 @Component({
   selector: 'app-root-page',
@@ -25,6 +26,7 @@ import {RouterOutlet} from "@angular/router";
     ToolbarComponent,
     DrawerComponent,
     RouterOutlet,
+    FooterComponent,
   ]
 })
 export class RootPageComponent implements AfterViewInit {
