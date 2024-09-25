@@ -14,7 +14,7 @@
         <div class="action">{{ ticket.price.action }}</div>
       </div>
       <a class="link-btn-wrap"
-         [href]="ticket.link"
+         (click)="openLink(ticket.link,ticket.title)"
          target="_blank">
         <button
           type="button"

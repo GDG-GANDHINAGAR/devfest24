@@ -19,6 +19,7 @@ import {ParallaxDirective} from "../../directives/parallax.directive";
 import {ParallaxScrollDirective} from "../../directives/ngx-parallax-scroll.directive";
 import {IParallaxScrollConfig} from "../../directives/ngx-parallax.interfaces";
 import {AboutDevfestComponent} from "../../comonents/sections/home/about-devfest/about-devfest.component";
+import {Analytics, logEvent} from "@angular/fire/analytics";
 
 @Component({
   selector: 'app-home',
@@ -46,7 +47,7 @@ export class HomeComponent implements AfterViewInit {
   })
   sections = viewChildren<ElementRef>('section');
   protected readonly LINKS = LINKS;
-
+  private analytics = inject(Analytics);
   config: IParallaxScrollConfig = {
     parallaxSpeed: 0.2,
     parallaxSmoothness: 1,
@@ -60,6 +61,7 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    logEvent(this.analytics, 'page_view', {page_path: this.router.url});
   }
 
 }
