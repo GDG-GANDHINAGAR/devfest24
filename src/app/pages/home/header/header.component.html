@@ -6,7 +6,7 @@
   <div class="call-to-action">
     <a class="link-btn-wrap"
        href="https://sessionize.com/gdg-gandhinagar-devfest-2024"
-       target="_blank" #link>
+       target="_blank">
       <button
         type="button"
         [color]="AppColors.WHITE"
@@ -16,11 +16,15 @@
         Call For Speakers
       </button>
     </a>
-  </div>
-  <div class="call-to-action">
-    <div class="box caption">
-      <h1 class="text">Tickets Coming soon</h1>
-    </div>
+    <button
+      (click)="scrollToTicket('tickets')"
+      type="button"
+      [color]="AppColors.WHITE"
+      aria-label="call for proposals"
+      retro-button
+      class="menu">
+      Buy Tickets
+    </button>
   </div>
   <div class="caption-wrap">
     <div class="box caption">

@@ -6,6 +6,7 @@ import {HEADER_TEXT} from "../../../constants/data";
 import {MatIcon} from "@angular/material/icon";
 import {RetroButtonDirective} from "../../../directives/retro-button.directive";
 import {AppColors} from "../../../constants/enums";
+import {app} from "../../../../../server";
 
 @Component({
   selector: 'app-header',
@@ -29,6 +30,16 @@ export class HeaderComponent {
   isTab$ = this.app.isTab$;
   protected readonly AppColors = AppColors;
   protected readonly HEADER_TEXT = HEADER_TEXT;
+
+  scrollToTicket(tickets: string) {
+    if (this.app.isBrowser) {
+      const el = document.getElementById(tickets);
+      if (el) {
+        const box = el.getBoundingClientRect();
+        this.app.homeScrollElement.scrollTo({behavior: 'smooth', top: box.top - 100});
+      }
+    }
+  }
 }
 
 

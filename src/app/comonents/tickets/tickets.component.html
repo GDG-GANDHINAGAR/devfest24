@@ -1,4 +1,4 @@
-<div class="ticket-wrap">
+<div class="ticket-wrap" id="tickets">
   @for (ticket of TICKETS; track ticket) {
     <div class="box ticket" [ngClass]="{'sold': ticket.soldOut}">
       <h3 class="ticket-title">{{ ticket.title }}</h3>
@@ -13,7 +13,20 @@
         <div class="base">{{ ticket.price.base }}</div>
         <div class="action">{{ ticket.price.action }}</div>
       </div>
-      <button retro-button size="small" [disabled]="ticket.soldOut">Buy Now</button>
+      <a class="link-btn-wrap"
+         [href]="ticket.link"
+         target="_blank">
+        <button
+          type="button"
+          aria-label="call for proposals"
+          retro-button
+          class="menu"
+          [disabled]="ticket.soldOut"
+          size="small"
+        >
+          Buy Now
+        </button>
+      </a>
       @if (ticket.soldOut) {
         <div class="sold-out">
           Sold Out

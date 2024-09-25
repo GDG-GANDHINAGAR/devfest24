@@ -23,15 +23,17 @@ export const TESTIMONIALS: { [key: string]: Testimonial } = {
     outSide: 'It’s especially rewarding when a fellow community member recognizes Devfest Gandhinagar’s attention to detail,\n impressive scale, and dedication to attendee experience!'
   }
 }
+
 export const TICKETS: TicketType[] = [
   {
     title: 'Student Ticket',
     points: [
       'Full-access to Sessions, Oct 20',
-      'Talks, Keynotes, Panels, Conferences',
-      'Lunches, Tea/coffee & snacks'
+      'Talks, Keynotes, Panels, Conference',
+      'Lunch, Tea/Coffee & Snacks'
     ],
     soldOut: false,
+    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=22772|1',
     price: {
       footnote: 'limited, until sold out',
       base: '₹500',
@@ -42,10 +44,11 @@ export const TICKETS: TicketType[] = [
     title: 'Professional Ticket',
     points: [
       'Full-access to Sessions, Oct 20',
-      'Talks, Keynotes, Panels, Conferences',
-      'Lunches, Tea/coffee & snacks'
+      'Talks, Keynotes, Panels, Conference',
+      'Lunch, Tea/Coffee & Snacks'
     ],
     soldOut: false,
+    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=22599|1',
     price: {
       footnote: 'limited, until sold out',
       base: '₹500',
@@ -53,13 +56,14 @@ export const TICKETS: TicketType[] = [
     }
   },
   {
-    title: 'Professional Ticket + Mock Interview',
+    title: 'Ticket + Mock Interview',
     points: [
       'Full-access to Sessions, Oct 20',
-      'Talks, Keynotes, Panels, Conferences',
-      'Lunches, Tea/coffee & snacks',
+      'Talks, Keynotes, Panels, Conference',
+      'Lunch, Tea/Coffee & Snacks',
       'Access to mock interview panel',
     ],
+    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=22773|1',
     soldOut: false,
     price: {
       footnote: 'limited, until sold out',
@@ -68,14 +72,32 @@ export const TICKETS: TicketType[] = [
     }
   },
   {
+    title: 'Workshop Ticket',
+    points: [
+      'Full-access to Sessions, Oct 20',
+      'Talks, Keynotes, Panels, Conference',
+      'Lunch, Tea/Coffee & Snacks',
+      'Access to Flutter Workshop',
+      'Access to AI/ML Workshop',
+    ],
+    soldOut: false,
+    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=23969|1',
+    price: {
+      footnote: 'limited, until sold out',
+      base: '₹1500',
+      action: '+GST'
+    }
+  },
+  {
     title: 'Supporter Ticket',
     points: [
       'Full-access to Sessions, Oct 20',
-      'Talks, Keynotes, Panels, Conferences',
-      'Lunches, Tea/coffee & snacks',
+      'Talks, Keynotes, Panels, Conference',
+      'Lunch, Tea/Coffee & Snacks',
       'Access to mock interview panel',
     ],
     soldOut: false,
+    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=22774|1',
     price: {
       footnote: 'limited, until sold out',
       base: '₹1000',
@@ -86,11 +108,12 @@ export const TICKETS: TicketType[] = [
     title: 'Networking Dinner Ticket',
     points: [
       'Full-access to Sessions, Oct 20',
-      'Talks, Keynotes, Panels, Conferences',
-      'Lunches, Tea/coffee & snacks',
+      'Talks, Keynotes, Panels, Conference',
+      'Lunch, Tea/Coffee & Snacks',
       'Access to mock interview panel',
       'Networking Dinner with speakers & organizers',
     ],
+    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=22775|1',
     soldOut: false,
     price: {
       footnote: 'limited, until sold out',
