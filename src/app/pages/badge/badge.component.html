@@ -1,13 +1,43 @@
-<div class="canvas-wrap" style="width: 250px;height: 250px">
-  <canvas #canvasRef style="width: 100%; border-radius: 12px"></canvas>
+<div class="badge-wrap" [ngClass]="{'isMobile': isMobile$|async, 'isTablet': isTab$|async}">
+  <div class="content box">
+    <div class="title">
+      <h2>Badge</h2>
+    </div>
+    <div class="description">
+      <p>
+        Create your own badge with your name and title. You can customize the badge with different Styles.
+      </p>
+    </div>
+
+    <button retro-button (click)="file.click()" size="small" class="upload-btn">
+      Upload Image
+    </button>
+    <div class="shape">
+      <mat-button-toggle-group
+        (change)="changeShape($event)"
+        name="shape"
+        aria-label="Shape"
+        [value]="shapeData"
+        [hideSingleSelectionIndicator]="true"
+      >
+        <mat-button-toggle value="square">Square</mat-button-toggle>
+        <mat-button-toggle value="circle">Circle</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    @if (image) {
+      <button retro-button (click)="download()" size="small">
+        <i class="mdi mdi-arrow-down-bold-circle-outline"></i>
+        Download
+      </button>
+    }
+  </div>
+  <div class="badge">
+
+    <div class="canvas-wrap" >
+      <canvas #canvasRef style="width: 100%; border-radius: 12px"></canvas>
+    </div>
+    <input type="file" #file (change)="upload($event)" hidden="">
+
+  </div>
 </div>
-@if (downloadVisible) {
-  <button retro-button (click)="download()">
-    <i class="mdi mdi-arrow-down-bold-circle-outline"></i>
-    Download
-  </button>
-}
-<button retro-button (click)="file.click()">
-  upload image
-</button>
-<input type="file" #file (change)="upload($event)" hidden="">

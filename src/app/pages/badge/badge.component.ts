@@ -1,11 +1,19 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, inject, ViewChild} from '@angular/core';
 import {RetroButtonDirective} from "../../directives/retro-button.directive";
+import {MatButtonToggle, MatButtonToggleGroup} from "@angular/material/button-toggle";
+import {AppService} from "../../services/app.service";
+import {AsyncPipe, NgClass} from "@angular/common";
+
 
 @Component({
   selector: 'app-badge',
   standalone: true,
   imports: [
-    RetroButtonDirective
+    RetroButtonDirective,
+    MatButtonToggleGroup,
+    MatButtonToggle,
+    AsyncPipe,
+    NgClass,
   ],
   templateUrl: './badge.component.html',
   styleUrl: './badge.component.sass'
@@ -13,24 +21,31 @@ import {RetroButtonDirective} from "../../directives/retro-button.directive";
 export class BadgeComponent {
   @ViewChild('canvasRef', {static: true}) canvasRef!: ElementRef<HTMLCanvasElement>;
   @ViewChild('fileInput', {static: true}) fileInput!: ElementRef<HTMLInputElement>;
-
-  shapeData: string = 'original';
+  app = inject(AppService);
+  baseWidth: number = 1000;
+  baseHeight: number = 1000;
+  shapeData: string = 'square';
   downloadVisible: boolean = false;
   image: HTMLImageElement | null = null;
-  banner: HTMLImageElement = new Image();
+  banner: HTMLImageElement;
   ctx: CanvasRenderingContext2D | null = null;
+  isMobile$ = this.app.isMobile$;
+  isTab$ = this.app.isTab$;
 
   ngOnInit() {
-    this.initializeCanvas();
+    if (this.app.isBrowser) {
+      this.banner = new Image();
+      this.initializeCanvas();
+    }
   }
 
   initializeCanvas() {
     const canvas = this.canvasRef.nativeElement;
     this.ctx = canvas.getContext('2d');
-
-    this.banner.src = 'https://df24.b-cdn.net/badge/frame.svg';
-    this.banner.width = 250
-    this.banner.height = 250
+    this.banner.src = this.shapeData === 'square' ? 'https://df24.b-cdn.net/badge/frame.svg' : 'https://df24.b-cdn.net/badge/frame-circle.svg';
+    this.banner.crossOrigin = 'Anonymous';
+    this.banner.width = this.baseWidth;
+    this.banner.height = this.baseHeight;
     this.banner.onload = () => {
       this.draw();
     };
@@ -53,57 +68,45 @@ export class BadgeComponent {
     const canvas = this.canvasRef.nativeElement;
     if (!canvas || !this.ctx) return;
 
-    canvas.width = 250;
-    canvas.height = 250;
+    canvas.width = this.baseWidth;
+    canvas.height = this.baseHeight;
 
     this.ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (this.image) {
       this.drawImage();
     } else {
-      this.ctx.fillStyle = '#fff';
+      this.ctx.fillStyle = '#f0ebdb';
       this.ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
     this.drawBanner();
+    this.applyShape();
   }
 
   drawImage() {
     const canvas = this.canvasRef.nativeElement;
     if (!this.image || !this.ctx) return;
 
-    switch (this.shapeData) {
-      case 'original':
-        canvas.width = 250;
-        canvas.height = 250;
-        this.ctx.drawImage(
-          this.image,
-          0,
-          0,
-          canvas.width,
-          canvas.height
-        );
-        break;
-      default:
-        canvas.width = 250;
-        canvas.height = 250;
-        const hRatio = canvas.width / this.image.width;
-        const vRatio = canvas.height / this.image.height;
-        const ratio = Math.max(hRatio, vRatio);
-        const x = (canvas.width - this.image.width * ratio) / 2;
-        const y = (canvas.height - this.image.height * ratio) / 2;
-        this.ctx.drawImage(
-          this.image,
-          0,
-          0,
-          this.image.width,
-          this.image.height,
-          x,
-          y,
-          this.image.width * ratio,
-          this.image.height * ratio
-        );
-        break;
-    }
+
+    canvas.width = this.baseWidth;
+    canvas.height = this.baseHeight;
+    const hRatio = canvas.width / this.image.width;
+    const vRatio = canvas.height / this.image.height;
+    const ratio = Math.max(hRatio, vRatio);
+    const x = (canvas.width - this.image.width * ratio) / 2;
+    const y = (canvas.height - this.image.height * ratio) / 2;
+    this.ctx.drawImage(
+      this.image,
+      0,
+      0,
+      this.image.width,
+      this.image.height,
+      x,
+      y,
+      this.image.width * ratio,
+      this.image.height * ratio
+    );
+
   }
 
   drawBanner() {
@@ -126,16 +129,33 @@ export class BadgeComponent {
   }
 
 
-  changeShape(type: string) {
-    this.shapeData = type;
-    this.draw();
+  changeShape(type) {
+    console.log(type);
+    this.shapeData = type.value;
+    this.initializeCanvas();
   }
+
+  applyShape() {
+    if (this.shapeData === "circle") {
+      this.ctx.globalCompositeOperation = "destination-in";
+      this.ctx.beginPath();
+      this.ctx.arc(
+        this.canvasRef.nativeElement.width / 2,
+        this.canvasRef.nativeElement.height / 2,
+        this.canvasRef.nativeElement.height / 2,
+        0,
+        Math.PI * 2
+      );
+      this.ctx.closePath();
+      this.ctx.fill();
+    }
+  };
 
   download() {
     const canvas = this.canvasRef.nativeElement;
     const a = document.createElement('a');
     const url = canvas.toDataURL('image/png;base64');
-    a.download = 'badge.png';
+    a.download = `badge_${this.shapeData}_${Date.now()}.png`;
     a.href = url;
     a.click();
   }
