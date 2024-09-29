@@ -10,3 +10,16 @@ export type SpeakerData = {
     icon: string
   }[]; // Optional property
 }
+
+export type PeopleData = {
+  img: string;
+  name: string;
+  jobTitle: string;
+  company: string;
+  location: string;
+  testimonials: string;
+  socials?: {
+    link: string
+    icon: string
+  }[]; // Optional property
+}

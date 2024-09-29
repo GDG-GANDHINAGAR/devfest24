@@ -330,3 +330,46 @@ export const FOOTER_LINKS = [
     path: 'https://developers.google.com/community-guidelines'
   },
 ]
+
+const sponsors = {
+  title: [
+    {
+      title: 'Google for Developers',
+      link: 'https://developers.google.com/',
+      photo: 'sponsors/google.svg'
+    },
+    {
+      title: 'Flutter Flow',
+      link: 'https://www.flutterflow.io/',
+      photo: 'sponsors/flutterflow.svg'
+    },
+  ],
+  venue: [
+    {
+      title: 'SmartSense Consulting Solutions',
+      link: 'https://smartsensesolutions.com/',
+      photo: 'sponsors/smartsense.svg'
+    },
+    {
+      title: 'BOSC Tech Labs Private Limited',
+      link: 'https://bosctechlabs.com//',
+      photo: 'sponsors/BOSC.svg'
+    },
+    {
+      title: 'Sai Branding',
+      link: 'https://www.saibranding.com/',
+      photo: 'sponsors/sai.svg'
+    },
+  ],
+  ticketing: [
+    {
+      title: 'Konfhub',
+      link: 'https://konfhub.com/',
+      photo: 'sponsors/konfhub.svg'
+    }
+  ]
+}
+
+const team = [
+
+]

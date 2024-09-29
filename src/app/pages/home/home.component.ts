@@ -61,7 +61,9 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    logEvent(this.analytics, 'page_view', {page_path: this.router.url});
+    if (this.app.isBrowser) {
+      logEvent(this.analytics, 'page_view', {page_path: this.router.url});
+    }
   }
 
 }

@@ -22,15 +22,15 @@ export class BadgeComponent {
   @ViewChild('canvasRef', {static: true}) canvasRef!: ElementRef<HTMLCanvasElement>;
   @ViewChild('fileInput', {static: true}) fileInput!: ElementRef<HTMLInputElement>;
   app = inject(AppService);
+  isMobile$ = this.app.isMobile$;
+  isTab$ = this.app.isTab$;
+  ctx: CanvasRenderingContext2D | null = null;
   baseWidth: number = 1000;
   baseHeight: number = 1000;
   shapeData: string = 'square';
   downloadVisible: boolean = false;
   image: HTMLImageElement | null = null;
   banner: HTMLImageElement;
-  ctx: CanvasRenderingContext2D | null = null;
-  isMobile$ = this.app.isMobile$;
-  isTab$ = this.app.isTab$;
 
   ngOnInit() {
     if (this.app.isBrowser) {
@@ -145,7 +145,7 @@ export class BadgeComponent {
         this.canvasRef.nativeElement.height / 2,
         0,
         Math.PI * 2
-      );
+      );+
       this.ctx.closePath();
       this.ctx.fill();
     }
