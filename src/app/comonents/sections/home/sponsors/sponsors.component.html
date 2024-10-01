@@ -2,4 +2,18 @@
   <h1 class="title title-stroke">
     Our Sponsors
   </h1>
+  <div class="sponsors-cat-wrap">
+    <div class="box-wrap">
+      <div class="cat-title">
+        Title Sponsors
+      </div>
+      @for (sponsor of SPONSORS.title; track sponsor) {
+        <div class="sponsor box">
+          <img [ngSrc]="sponsor.photo" [alt]="sponsor.title" width="200" height="100"/>
+        </div>
+      }
+
+    </div>
+
+  </div>
 </div>

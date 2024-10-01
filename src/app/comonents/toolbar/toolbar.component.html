@@ -18,7 +18,7 @@
       <div class="links">
         <ul>
           @for (link of LINKS; track link) {
-            <li routerLink="home">
+            <li [routerLink]="[link.link]" routerLinkActive="active">
               {{ link.title }}
             </li>
           }

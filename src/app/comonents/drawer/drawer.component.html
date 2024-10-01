@@ -6,13 +6,22 @@
     <div class="links">
       <ul>
         @for (link of LINKS; track link) {
-          <li [routerLink]="[link.link]">
+          <li [routerLink]="[link.link]" routerLinkActive="active" >
             {{ link.title }}
           </li>
         }
       </ul>
       <div class="highlighter"></div>
     </div>
+    <button
+      (click)="scrollToTicket('tickets')"
+      type="button"
+      [color]="AppColors.WHITE"
+      aria-label="call for proposals"
+      retro-button
+      class="menu">
+      Buy Tickets
+    </button>
 <!--    <button retro-button class="ticket-button" [color]="AppColors.WHITE">-->
 <!--      Get Tickets-->
 <!--    </button>-->

@@ -331,7 +331,7 @@ export const FOOTER_LINKS = [
   },
 ]
 
-const sponsors = {
+export const SPONSORS = {
   title: [
     {
       title: 'Google for Developers',
