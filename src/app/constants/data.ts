@@ -336,24 +336,24 @@ export const SPONSORS = {
     {
       title: 'Google for Developers',
       link: 'https://developers.google.com/',
-      photo: 'sponsors/google.svg'
+      photo: 'sponsors/google_for _dev.svg'
     },
     {
       title: 'Flutter Flow',
       link: 'https://www.flutterflow.io/',
-      photo: 'sponsors/flutterflow.svg'
+      photo: 'sponsors/flutter_flow.svg'
     },
   ],
   venue: [
     {
       title: 'SmartSense Consulting Solutions',
       link: 'https://smartsensesolutions.com/',
-      photo: 'sponsors/smartsense.svg'
+      photo: 'sponsors/smart_sense.svg'
     },
     {
       title: 'BOSC Tech Labs Private Limited',
       link: 'https://bosctechlabs.com//',
-      photo: 'sponsors/BOSC.svg'
+      photo: 'sponsors/bosc.svg'
     },
     {
       title: 'Sai Branding',
@@ -365,7 +365,7 @@ export const SPONSORS = {
     {
       title: 'Konfhub',
       link: 'https://konfhub.com/',
-      photo: 'sponsors/konfhub.svg'
+      photo: 'sponsors/konf_hub.svg'
     }
   ]
 }
