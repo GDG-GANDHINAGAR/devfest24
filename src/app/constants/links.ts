@@ -4,6 +4,9 @@ export const LINKS =
       {
         title: 'Home',
         link: 'home'
+      },{
+        title: 'Badge',
+        link: 'badge'
       },
 
     ]

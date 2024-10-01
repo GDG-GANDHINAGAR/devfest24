@@ -22,15 +22,15 @@ export class BadgeComponent {
   @ViewChild('canvasRef', {static: true}) canvasRef!: ElementRef<HTMLCanvasElement>;
   @ViewChild('fileInput', {static: true}) fileInput!: ElementRef<HTMLInputElement>;
   app = inject(AppService);
-  baseWidth: number = 1000;
-  baseHeight: number = 1000;
+  isMobile$ = this.app.isMobile$;
+  isTab$ = this.app.isTab$;
+  ctx: CanvasRenderingContext2D | null = null;
+  baseWidth: number = 4320;
+  baseHeight: number = 4320;
   shapeData: string = 'square';
   downloadVisible: boolean = false;
   image: HTMLImageElement | null = null;
   banner: HTMLImageElement;
-  ctx: CanvasRenderingContext2D | null = null;
-  isMobile$ = this.app.isMobile$;
-  isTab$ = this.app.isTab$;
 
   ngOnInit() {
     if (this.app.isBrowser) {
@@ -42,7 +42,7 @@ export class BadgeComponent {
   initializeCanvas() {
     const canvas = this.canvasRef.nativeElement;
     this.ctx = canvas.getContext('2d');
-    this.banner.src = this.shapeData === 'square' ? 'https://df24.b-cdn.net/badge/frame.svg' : 'https://df24.b-cdn.net/badge/frame-circle.svg';
+    this.banner.src = this.shapeData === 'square' ? 'https://df24.b-cdn.net/badge/frame.png' : 'https://df24.b-cdn.net/badge/frame-circle.png';
     this.banner.crossOrigin = 'Anonymous';
     this.banner.width = this.baseWidth;
     this.banner.height = this.baseHeight;
@@ -111,9 +111,11 @@ export class BadgeComponent {
 
   drawBanner() {
     const canvas = this.canvasRef.nativeElement;
+    const wrapperWidth = this.canvasRef.nativeElement.parentElement?.clientWidth;
     if (!this.banner || !this.ctx) return;
 
     const height = (this.banner.height / this.banner.width) * canvas.width;
+    console.log(height);
     const y = canvas.height - height;
     this.ctx.drawImage(
       this.banner,
@@ -122,7 +124,7 @@ export class BadgeComponent {
       this.banner.width,
       this.banner.height,
       0,
-      0,
+      y,
       canvas.width,
       height
     );
@@ -132,6 +134,17 @@ export class BadgeComponent {
   changeShape(type) {
     console.log(type);
     this.shapeData = type.value;
+    switch (type.value) {
+      case 'circle':
+        this.baseHeight = 4264
+        this.baseWidth = 4264
+        break;
+      case 'square':
+
+        this.baseHeight = 4320
+        this.baseWidth = 4320
+        break;
+    }
     this.initializeCanvas();
   }
 
@@ -146,7 +159,8 @@ export class BadgeComponent {
         0,
         Math.PI * 2
       );
-      this.ctx.closePath();
+      +
+        this.ctx.closePath();
       this.ctx.fill();
     }
   };

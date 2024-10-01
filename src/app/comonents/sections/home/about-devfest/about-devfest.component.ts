@@ -12,6 +12,8 @@ import {TESTIMONIALS, TICKETS} from '../../../../constants/data';
 import {PhotosComponent} from "../photos/photos.component";
 import {JoinComponent} from "../join/join.component";
 import {KeepInTouchComponent} from "../keep-in-touch/keep-in-touch.component";
+import {SponsorsComponent} from "../sponsors/sponsors.component";
+import {TeamComponent} from "../team/team.component";
 
 @Component({
   selector: 'app-about-devfest',
@@ -29,7 +31,9 @@ import {KeepInTouchComponent} from "../keep-in-touch/keep-in-touch.component";
     PastSpeakersComponent,
     PhotosComponent,
     JoinComponent,
-    KeepInTouchComponent
+    KeepInTouchComponent,
+    SponsorsComponent,
+    TeamComponent
   ],
   templateUrl: './about-devfest.component.html',
   styleUrl: './about-devfest.component.sass'

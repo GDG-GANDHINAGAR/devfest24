@@ -23,9 +23,6 @@ export class WhyBuyTicketComponent {
   isMobile$ = this.app.isMobile$;
   isTab$ = this.app.isTab$;
 
-
-  protected readonly open = open;
-
   private analytics = inject(Analytics);
   openLink() {
     logEvent(this.analytics, 'click', {event_category: 'button', event_label: 'guide'});
