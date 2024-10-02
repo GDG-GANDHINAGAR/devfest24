@@ -338,6 +338,8 @@ export const SPONSORS = {
       link: 'https://developers.google.com/',
       photo: 'sponsors/google_for _dev.svg'
     },
+  ],
+  diamond: [
     {
       title: 'Flutter Flow',
       link: 'https://www.flutterflow.io/',
@@ -370,6 +372,4 @@ export const SPONSORS = {
   ]
 }
 
-const team = [
-
-]
+const team = []

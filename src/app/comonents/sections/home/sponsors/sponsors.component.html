@@ -19,6 +19,20 @@
     </div>
     <div class="box-wrap">
       <div class="cat-title">
+        Diamond Sponsors
+      </div>
+      <div class="boxes-wrapper">
+        @for (sponsor of SPONSORS.diamond; track sponsor) {
+          <a [href]="sponsor.link" target="_blank">
+            <div class="sponsor box">
+              <img [ngSrc]="sponsor.photo" [alt]="sponsor.title" width="200" height="100"/>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+    <div class="box-wrap">
+      <div class="cat-title">
         Venue Partners
       </div>
       <div class="boxes-wrapper">
