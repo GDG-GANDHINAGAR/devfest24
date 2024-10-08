@@ -33,7 +33,7 @@ export const TICKETS: TicketType[] = [
       'Lunch, Tea/Coffee & Snacks'
     ],
     soldOut: false,
-    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=22772|1',
+    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=24884',
     price: {
       footnote: 'limited, until sold out',
       base: '₹500',
@@ -48,7 +48,7 @@ export const TICKETS: TicketType[] = [
       'Lunch, Tea/Coffee & Snacks'
     ],
     soldOut: false,
-    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=22599|1',
+    link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=24918',
     price: {
       footnote: 'limited, until sold out',
       base: '₹500',
