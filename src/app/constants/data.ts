@@ -36,7 +36,7 @@ export const TICKETS: TicketType[] = [
     link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=24884',
     price: {
       footnote: 'limited, until sold out',
-      base: '₹500',
+      base: '₹600',
       action: '+GST'
     }
   },
@@ -51,7 +51,7 @@ export const TICKETS: TicketType[] = [
     link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=24918',
     price: {
       footnote: 'limited, until sold out',
-      base: '₹500',
+      base: '₹600',
       action: '+GST'
     }
   },
