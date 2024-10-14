@@ -32,7 +32,7 @@ export const TICKETS: TicketType[] = [
       'Talks, Keynotes, Panels, Conference',
       'Lunch, Tea/Coffee & Snacks'
     ],
-    soldOut: false,
+    soldOut: true,
     link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=24884',
     price: {
       footnote: 'limited, until sold out',
@@ -47,7 +47,7 @@ export const TICKETS: TicketType[] = [
       'Talks, Keynotes, Panels, Conference',
       'Lunch, Tea/Coffee & Snacks'
     ],
-    soldOut: false,
+    soldOut: true,
     link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=24918',
     price: {
       footnote: 'limited, until sold out',
@@ -64,7 +64,7 @@ export const TICKETS: TicketType[] = [
       'Access to mock interview panel',
     ],
     link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=22773|1',
-    soldOut: false,
+    soldOut: true,
     price: {
       footnote: 'limited, until sold out',
       base: '₹750',
@@ -81,7 +81,7 @@ export const TICKETS: TicketType[] = [
       'Access to AI/ML Workshop',
       'Workshop Certificate',
     ],
-    soldOut: false,
+    soldOut: true,
     link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=23969|1',
     price: {
       footnote: 'limited, until sold out',
