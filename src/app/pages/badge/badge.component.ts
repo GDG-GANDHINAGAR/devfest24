@@ -25,8 +25,8 @@ export class BadgeComponent {
   isMobile$ = this.app.isMobile$;
   isTab$ = this.app.isTab$;
   ctx: CanvasRenderingContext2D | null = null;
-  baseWidth: number = 4320;
-  baseHeight: number = 4320;
+  baseWidth: number = 1000;
+  baseHeight: number = 1000;
   shapeData: string = 'square';
   downloadVisible: boolean = false;
   image: HTMLImageElement | null = null;
@@ -136,13 +136,13 @@ export class BadgeComponent {
     this.shapeData = type.value;
     switch (type.value) {
       case 'circle':
-        this.baseHeight = 4264
-        this.baseWidth = 4264
+        this.baseHeight = 1000
+        this.baseWidth = 1000
         break;
       case 'square':
 
-        this.baseHeight = 4320
-        this.baseWidth = 4320
+        this.baseHeight = 1000
+        this.baseWidth = 1000
         break;
     }
     this.initializeCanvas();
