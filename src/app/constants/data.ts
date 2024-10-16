@@ -81,7 +81,7 @@ export const TICKETS: TicketType[] = [
       'Access to AI/ML Workshop',
       'Workshop Certificate',
     ],
-    soldOut: true,
+    soldOut: false,
     link: 'https://konfhub.com/checkout/devfest-gnr-24?ticketId=23969|1',
     price: {
       footnote: 'limited, until sold out',
